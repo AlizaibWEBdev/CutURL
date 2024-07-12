@@ -35,7 +35,7 @@ app.post('/shorten', async (req, res) => {
       await url.save();
     }
 
-    res.json({ shortUrl: `cuturl-chi.vercel.app/${url.shortUrl}` });
+    res.json({ shortUrl: `https://cuturl-chi.vercel.app/${url.shortUrl}` });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Server error' });
