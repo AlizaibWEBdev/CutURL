@@ -1,2 +1,19 @@
 # CutURL
-Instantly shorten and share URLs with ease. Create compact links for quick sharing and tracking
+
+CutURL is a simple web application that shortens URLs for easy sharing.
+
+## Features
+
+- URL Shortening
+- Copy to Clipboard
+- Usage Tracking
+
+## Usage
+
+1. Enter a long URL.
+2. Click "Shorten" to get a shortened URL.
+3. Click "Copy to Clipboard" to copy it.
+
+## Installation
+
+Visit [CutURL.vercel.app](https://cuturl.vercel.app).
