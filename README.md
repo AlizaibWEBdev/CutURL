@@ -6,7 +6,7 @@ CutURL is a simple web application that shortens URLs for easy sharing.
 
 - URL Shortening
 - Copy to Clipboard
-- Usage Tracking
+
 
 ## Usage
 
