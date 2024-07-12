@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free URL Shortener - Shorten Your Links Instantly | URL Shortening Service</title>
+  <meta name="description" content="Shorten long URLs with our free URL shortener service. Simplify your links, track their performance, and enhance your link management.">
+  <meta name="keywords" content="URL shortener, free URL shortener, link shortener, shorten URLs, short links, URL shortening service, link management">
+  <meta name="author" content="Your Name">
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="canonical" href="https://www.yourwebsite.com"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+</head>
+<style>
+  /* Reset some basic elements for consistency across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #0073e6;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0073e6;
+  border-bottom: 2px solid #0073e6;
+  padding-bottom: 0.5rem;
+}
+
+#shorten-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#longUrl {
+  padding: 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #0073e6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  background: url('checkmark.svg') no-repeat left center;
+  background-size: 20px;
+  padding-left: 30px;
+  margin-bottom: 0.5rem;
+}
+
+#faq dl dt {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+#faq dl dd {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer p {
+  margin-bottom: 1rem;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+footer nav ul li {
+  margin: 0 1rem;
+}
+
+footer nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  footer nav ul {
+    flex-direction: column;
+  }
+
+  footer nav ul li {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Enhanced Modern Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background: linear-gradient(90deg, #0073e6, #005bb5);
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button {
+  background: linear-gradient(90deg, #0073e6, #005bb5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+section {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li {
+  background-size: 20px 20px;
+  line-height: 1.5;
+}
+
+footer nav ul {
+  flex-wrap: wrap;
+}
+
+</style>
+<body>
+  <header>
+    <h1>Free URL Shortener</h1>
+    <p>Shorten long URLs with our easy-to-use service.</p>
+  </header>
+
+  <main>
+    <section id="shorten">
+      <h2>Shorten Your URL</h2>
+      <form id="shorten-form">
+        <input type="text" id="longUrl" placeholder="Enter URL to shorten" required>
+        <button type="submit">Shorten</button>
+      </form>
+      <div id="result"></div>
+    </section>
+
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Instant URL shortening</li>
+        <li>Track link performance</li>
+        <li>Free and easy to use</li>
+        <li>Customizable short URLs</li>
+        <li>Secure and reliable</li>
+      </ul>
+    </section>
+
+    <section id="how-it-works">
+      <h2>How It Works</h2>
+      <p>Our URL shortener takes your long URLs and converts them into shorter, more manageable links. Simply paste your long URL into the input box above and click "Shorten" to get started.</p>
+      <p>Each shortened URL is unique and can be tracked to analyze performance, providing you with valuable insights into your link's engagement.</p>
+    </section>
+
+    <section id="benefits">
+      <h2>Benefits of Using Our URL Shortener</h2>
+      <ul>
+        <li>Improved link aesthetics</li>
+        <li>Better click-through rates</li>
+        <li>Easy sharing on social media</li>
+        <li>Enhanced link management</li>
+        <li>Increased brand visibility with custom URLs</li>
+      </ul>
+    </section>
+
+    <section id="use-cases">
+      <h2>Use Cases</h2>
+      <p>Our URL shortener can be used in various scenarios:</p>
+      <ul>
+        <li>Marketing campaigns</li>
+        <li>Social media sharing</li>
+        <li>Email campaigns</li>
+        <li>Affiliate links</li>
+        <li>Linking to documents and resources</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <dl>
+        <dt>Is the URL shortener service free?</dt>
+        <dd>Yes, our URL shortener is completely free to use.</dd>
+        <dt>Can I track the performance of my shortened URLs?</dt>
+        <dd>Yes, you can track clicks and other performance metrics for your shortened URLs.</dd>
+        <dt>Is it possible to customize my shortened URLs?</dt>
+        <dd>Yes, you can create custom short URLs for better branding and recognition.</dd>
+        <dt>How secure is the URL shortener?</dt>
+        <dd>We use secure protocols to ensure your links are safe and reliable.</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Your Name. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="#shorten">Shorten</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+
+<script>
+  document.getElementById('shorten-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const longUrl = document.getElementById('longUrl').value;
+
+    const response = await fetch('/shorten', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ longUrl })
+    });
+
+    const result = await response.json();
+    const resultDiv = document.getElementById('result');
+
+    if (result.shortUrl) {
+      resultDiv.innerHTML = `
+        <p>Short URL: <a href="${result.shortUrl}" id="shortUrl">${result.shortUrl}</a></p>
+        <button id="copyButton">Copy to Clipboard</button>
+      `;
+
+      document.getElementById('copyButton').addEventListener('click', function() {
+        const shortUrlElement = document.getElementById('shortUrl');
+        const range = document.createRange();
+        range.selectNode(shortUrlElement);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+
+        try {
+          document.execCommand('copy');
+          window.getSelection().removeAllRanges();
+          alert('Short URL copied to clipboard');
+        } catch (err) {
+          alert('Failed to copy text');
+        }
+      });
+    } else {
+      resultDiv.innerHTML = `<p>Error: ${result.error}</p>`;
+    }
+  });
+</script>
+
+</html>
+
+
